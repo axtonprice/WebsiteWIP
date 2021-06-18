@@ -60,10 +60,11 @@
 
                 <?php
                 $q = $_GET['q'];
+                $file = glob('modules/' . "*.*");
 
-                if ($q) {
+                if (isset($q) == true) {
 
-                    foreach (scandir('.') as $fileName) {
+                    foreach ($file as $fileName) {
                         if (str_contains($fileName, ".php")) {
 
                             $fileName2 = str_replace(".php", "", $fileName);
@@ -79,9 +80,8 @@
                             }
                         }
                     }
-                } else {
-
-                    foreach (scandir('.') as $fileName) {
+                } elseif (isset($q) == false) {
+                    foreach ($file as $fileName) {
                         if (str_contains($fileName, ".php")) {
 
                             $fileName2 = str_replace(".php", "", $fileName);
@@ -95,6 +95,9 @@
                         }
                     }
                     //
+                }
+                else{
+                    return "error";
                 }
 
                 ?>
