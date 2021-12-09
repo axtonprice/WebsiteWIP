@@ -1,2 +1,2 @@
 # Brendan's Store
-Live version at https://brendan.surge-networks.co.uk/
+This repo is no longer maintained, and the live version is no longer available!
